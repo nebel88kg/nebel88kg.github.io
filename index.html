@@ -5,29 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KeepPushing - Running Coach</title>
     <style>
-        body, html { height: 100%; margin: 0; font-family: Arial, sans-serif; }
+        body, html { height: 100%; margin: 0; font-family: Arial, sans-serif; background: #000; }
         .hero {
-            position: relative; height: 100vh; overflow: hidden;
+            position: relative; height: 100vh; overflow: hidden; display: flex;
+            flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            color: white;
+        }
+        .video-container {
+            position: relative; width: 600px; height: 338px; margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7); border-radius: 12px; overflow: hidden;
         }
         .video-bg {
-            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
-            width: auto; height: auto; transform: translate(-50%, -50%); z-index: -1;
-        }
-        .overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4); color: white; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
+        }
+        .video-overlay-link {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2; /* Ensures it's clickable above the iframe */
+        }
+        .text-overlay {
+            position: relative; z-index: 1;
         }
         .btn {
-            background: #007bff; color: white; padding: 15px 30px; margin: 10px; text-decoration: none;
-            border-radius: 20px; font-size: 1.2em;
+            background: #007bff; color: white; padding: 15px 30px; margin: 10px;
+            text-decoration: none; border-radius: 20px; font-size: 1.2em; display: inline-block;
         }
     </style>
 </head>
 <body>
     <section class="hero">
-        <iframe class="video-bg" src="https://www.youtube.com/embed/EAynHZE-lK4?autoplay=1&mute=1&loop=1&playlist=EAynHZE-lK4&controls=0&rel=0" frameborder="0" allow="autoplay"></iframe>
-        <div class="overlay">
+        <div class="video-container">
+            <iframe class="video-bg" src="https://www.youtube.com/embed/EAynHZE-lK4?autoplay=1&mute=1&loop=1&playlist=EAynHZE-lK4&controls=1&rel=0" 
+                    frameborder="0" allow="autoplay" allowfullscreen></iframe>
+            <a href="https://www.youtube.com/watch?v=EAynHZE-lK4" target="_blank" class="video-overlay-link" aria-label="Play video on YouTube"></a>
+        </div>
+        <div class="text-overlay">
             <h1>Keep Pushing - Running Coach</h1>
             <p>Get faster by running easier.</p>
             <a href="https://apps.apple.com/us/app/keeppushing-running-coach/id6755646753" class="btn">Download on App Store</a>
