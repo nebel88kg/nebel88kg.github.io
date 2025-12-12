@@ -57,22 +57,6 @@
         .btn:hover {
             background: #0056b3;
         }
-        /* Optional subtle play icon that shows only when paused/hover */
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 90px;
-            color: rgba(255,255,255,0.8);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .video-container:hover .play-icon {
-            opacity: 0.6;
-        }
     </style>
 </head>
 <body>
@@ -83,9 +67,6 @@
                     frameborder="0" 
                     allow="autoplay; encrypted-media" 
                     allowfullscreen></iframe>
-            
-            <!-- Optional large centered play icon (purely visual, disappears when playing) -->
-            <div class="play-icon">▶</div>
         </div>
         
         <div class="text-overlay">
